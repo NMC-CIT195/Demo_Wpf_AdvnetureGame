@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Demo_Wpf_AdvnetureGame.PlayerSetup
+namespace Demo_Wpf_AdventureGame.PlayerSetup
 {
     /// <summary>
     /// Interaction logic for App.xaml

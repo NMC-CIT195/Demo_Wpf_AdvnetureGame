@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_Wpf_AdvnetureGame.PlayerSetup", "Demo_Wpf_AdvnetureGame.PlayerSetup\Demo_Wpf_AdvnetureGame.PlayerSetup.csproj", "{5E645B8F-40AC-46D9-A0D8-49FD0D7E23BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_Wpf_AdventureGame.PlayerSetup", "Demo_Wpf_AdvnetureGame.PlayerSetup\Demo_Wpf_AdventureGame.PlayerSetup.csproj", "{5E645B8F-40AC-46D9-A0D8-49FD0D7E23BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

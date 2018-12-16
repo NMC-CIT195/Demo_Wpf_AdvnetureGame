@@ -13,16 +13,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Demo_Wpf_AdvnetureGame.PlayerSetup
+namespace Demo_Wpf_AdventureGame
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SplashScreen : Window
     {
-        public MainWindow()
+        public SplashScreen()
         {
             InitializeComponent();
+            InitializeWindow();
+        }
+
+        private void InitializeWindow()
+        {
+
+        }
+
+        private void ButtonQuit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
