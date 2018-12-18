@@ -10,33 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Demo_Wpf_AdventureGame.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for PlayerSetupWindow.xaml
     /// </summary>
-    public partial class SplashScreen : Window
+    public partial class PlayerSetupWindow : Window
     {
-        public SplashScreen()
+        public PlayerSetupWindow()
         {
             InitializeComponent();
-            InitializeWindow();
         }
 
-        private void InitializeWindow()
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
-        private void ButtonQuit_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
-        private void ButtonPlay_Click(object sender, RoutedEventArgs e)
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
