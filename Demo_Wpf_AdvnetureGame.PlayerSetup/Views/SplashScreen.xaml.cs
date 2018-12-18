@@ -35,5 +35,10 @@ namespace Demo_Wpf_AdventureGame
         {
             Application.Current.Shutdown();
         }
+
+        private void ButtonPlay_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Demo_Wpf_AdventureGame.PlayerSetup"
-             StartupUri="SplashScreen.xaml">
+             StartupUri="Views/MissionWindow.xaml">
     <Application.Resources>
          
     </Application.Resources>

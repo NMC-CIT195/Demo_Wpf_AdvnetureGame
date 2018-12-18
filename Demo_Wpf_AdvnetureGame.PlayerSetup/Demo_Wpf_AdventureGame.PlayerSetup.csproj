@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,7 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="SplashScreen.xaml">
+    <Page Include="Views\MissionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SplashScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -62,11 +68,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\GameSession.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Presenters\MissionWindowPresenter.cs" />
+    <Compile Include="Views\MissionWindow.xaml.cs">
+      <DependentUpon>MissionWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Map.cs" />
     <Compile Include="Models\MapCoordinates.cs" />
-    <Compile Include="SplashScreen.xaml.cs">
+    <Compile Include="Views\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -97,7 +109,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataAccessLayer\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\splashscreen_space.jpg" />
   </ItemGroup>

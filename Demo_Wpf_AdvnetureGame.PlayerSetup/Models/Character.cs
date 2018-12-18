@@ -8,80 +8,43 @@ namespace Demo_Wpf_AdventureGame.Models
 {
     public class Character
     {
-        #region ENUMS
-
         public enum RaceName
         {
+            None,
             Human,
             Felandrian,
             Zorkanian
         }
 
-        #endregion
+        protected int _id;
+        protected string _shortName;
+        protected RaceName _race;
+        protected bool _isActive;
+        protected MapCoordinates _currentLocation;
 
-        #region FIELDS
-
-        private int _id;
-        private string _shortName;
-        private bool _isActive;
-        private MapCoordinates _currentLocation;
-
-        #endregion
-
-        #region PROPERTIES
-
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        public string ShortName
-        {
-            get { return _shortName; }
-            set { _shortName = value; }
-        }
-
-        public bool IsActive
-        {
-            get { return _isActive; }
-            set { _isActive = value; }
-        }
-
-        public MapCoordinates CurrentLocation
-        {
-            get { return _currentLocation; }
-            set { _currentLocation = value; }
-        }
-
-        #endregion
-
-        #region CONSTRUCTORS
+        public virtual int Id { get; set; }
+        public virtual string ShortName { get; set; }
+        public virtual RaceName Race { get; set; }
+        public virtual bool IsActive { get; set; }
+        public virtual MapCoordinates CurrentLocation { get; set; }
 
         public Character()
         {
 
         }
 
-        public Character(int id, string shortName, MapCoordinates currentLocation)
+        public Character(
+            int id, 
+            string shortName, 
+            RaceName race,
+            bool isActive,
+            MapCoordinates currentLocation)
         {
             _id = id;
             _shortName = shortName;
+            _race = race;
+            _isActive = isActive;
             _currentLocation = currentLocation;
         }
-
-        #endregion
-
-        #region METHODS
-
-
-
-        #endregion
-
-        #region EVENTS
-
-
-
-        #endregion
     }
 }
