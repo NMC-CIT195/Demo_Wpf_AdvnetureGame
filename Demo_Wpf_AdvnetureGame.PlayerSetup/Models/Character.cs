@@ -8,14 +8,6 @@ namespace Demo_Wpf_AdventureGame.Models
 {
     public class Character
     {
-        public enum RaceName
-        {
-            None,
-            Human,
-            Felandrian,
-            Zorkanian
-        }
-
         protected int _id;
         protected string _shortName;
         protected RaceName _race;

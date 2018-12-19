@@ -3,59 +3,157 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Demo_Wpf_AdventureGame.Views"
+        xmlns:local="clr-namespace:Demo_Wpf_AdventureGame.Models"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="PlayerSetupWindow" Height="400" Width="500" WindowStyle="None">
-    <Grid Background="Black">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="300" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Label 
-            Grid.Row="0" 
-            Content="Player Setup" 
-            Foreground="DeepSkyBlue" 
-            FontSize="24" 
-            Opacity="50"
-            HorizontalAlignment="Center" 
-            FontFamily="Lucida Console"/>
-        <Border BorderBrush="White" BorderThickness="1" CornerRadius="5">
+        Title="PlayerSetupWindow"
+        Height="400" 
+        Width="500" 
+        ResizeMode="NoResize" 
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Resources>
+        <ObjectDataProvider MethodName="GetValues"
+        ObjectType="{x:Type sys:Enum}"
+        x:Key="raceNames">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:RaceName" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
+    <StackPanel Background="MidnightBlue">
+        <Border 
+            BorderBrush="PowderBlue" 
+            BorderThickness="1" 
+            CornerRadius="5"
+            HorizontalAlignment="Stretch"
+            Margin="10,10,10,10">
             <Grid 
-            Grid.Row="1"
+                Background="MidnightBlue"
                 Margin="10,10,10,10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="250" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Label 
+                    Grid.Row="0" 
+                    Content="Player Setup" 
+                    Foreground="PowderBlue" 
+                    FontSize="24" 
+                    Opacity="50"
+                    HorizontalAlignment="Center" 
+                    FontFamily="OCR A Extended"/>
+                <Grid 
+                    Grid.Row="1"
+                    Margin="10,10,10,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,10,0"
+                        Content="Name"
+                        Foreground="PowderBlue" 
+                        FontFamily="OCR A Extended"
+                        FontSize="24"/>
+                    <TextBox
+                        Name="TextBoxName"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10,0,0,0 "
+                        Width="200"
+                        Text="{Binding CurrentPlayer.ShortName}"
+                        />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,10,0"
+                        Content="Age"
+                        Foreground="PowderBlue" 
+                        FontFamily="OCR A Extended"
+                        FontSize="24"/>
+                    <TextBox
+                        Name="TextBoxAge"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10,0,0,0 "
+                        Width="200"
+                        Text="{Binding CurrentPlayer.Age}"
+                        />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,10,0"
+                        Content="Race"
+                        Foreground="PowderBlue" 
+                        FontFamily="OCR A Extended"
+                        FontSize="24"/>
+                    <!--<TextBox
+                        Name="TextBoxRace"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10,0,0,0 "
+                        Width="200"
+                        />-->
+                    <ComboBox 
+                        Name="ComboBoxRace"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10,0,0,0 "
+                        Width="200"
+                        ItemsSource="{Binding Source={StaticResource raceNames}}"
+                        />
+                </Grid>
+                <Grid 
+                    Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        Name="ButtonCancel"
+                        Grid.Column="0"
+                        Margin="10,10,10,10"
+                        Content="Cancel"
+                        FontFamily="OCR A Extended"
+                        Background="PowderBlue"
+                        Foreground="MidnightBlue"
+                        Click="ButtonCancel_Click" />
+                    <Button
+                        Name="ButtonSave"
+                        Grid.Column="1"
+                        Margin="10,10,10,10"
+                        Content="Save"
+                        FontFamily="OCR A Extended"
+                        Background="PowderBlue"
+                        Foreground="MidnightBlue"
+                        Click="ButtonSave_Click" />
+                </Grid>
             </Grid>
-
         </Border>
-        <Grid 
-            Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button
-                Name="ButtonCancel"
-                Grid.Column="0"
-                Margin="10,10,10,10"
-                Content="Cancel"
-                FontFamily="Lucida Console"
-                Background="SkyBlue"
-                Foreground="Black"
-                Click="ButtonCancel_Click" />
-            <Button
-                Name="ButtonSave"
-                Grid.Column="1"
-                Margin="10,10,10,10"
-                Content="Save"
-                FontFamily="Lucida Console"
-                Background="SkyBlue"
-                Foreground="Black"
-                Click="ButtonSave_Click" />
-
-        </Grid>
-    </Grid>
+    </StackPanel>
 </Window>

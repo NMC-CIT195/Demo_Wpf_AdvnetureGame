@@ -51,7 +51,7 @@ namespace Demo_Wpf_AdventureGame.Presenters
         private void InitializeGameData()
         {
             _gameSession = new GameSession();
-            _gameSession.Player = GetGameObjects.PlayerInformation();
+            _gameSession.CurrentPlayer = GetGameObjects.PlayerInformation();
         }
 
         #endregion
@@ -69,12 +69,16 @@ namespace Demo_Wpf_AdventureGame.Presenters
         {
             PlayerSetupWindow playerSetupWindow = new PlayerSetupWindow();
             playerSetupWindow.Owner = _gameWindow;
+            playerSetupWindow.DataContext = _gameSession;
             playerSetupWindow.ShowDialog();
         }
 
         private void InitializeGameWindow()
         {
             _gameSession = new GameSession();
+
+            _gameSession.CurrentPlayer.ShortName = "Bonzo";
+
             _gameWindow = new GameWindow();
             _gameWindow.DataContext = _gameSession;
             _gameWindow.Show();

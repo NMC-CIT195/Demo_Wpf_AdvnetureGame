@@ -78,6 +78,7 @@
     <Compile Include="DataAccessLayer\GetGameObjects.cs" />
     <Compile Include="Models\GameSession.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\RaceName.cs" />
     <Compile Include="Presenters\GameWindowPresenter.cs" />
     <Compile Include="Views\GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>

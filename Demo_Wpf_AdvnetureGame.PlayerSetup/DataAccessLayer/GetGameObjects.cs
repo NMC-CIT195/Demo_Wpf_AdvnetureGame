@@ -15,7 +15,7 @@ namespace Demo_Wpf_AdventureGame.DataAccessLayer
             {
                 Id = 1,
                 ShortName = "Bonzo",
-                Race = Character.RaceName.Human,
+                Race =RaceName.Human,
                 Age = 45,
                 IsActive = true,
                 CurrentLocation = new MapCoordinates(0, 0)

@@ -16,7 +16,7 @@ namespace Demo_Wpf_AdventureGame.Models
 
         #region FIELDS
 
-        private Player _player;
+        private Player _currentPlayer;
         private Map _map;
 
 
@@ -24,10 +24,10 @@ namespace Demo_Wpf_AdventureGame.Models
 
         #region PROPERTIES
 
-        public Player Player
+        public Player CurrentPlayer
         {
-            get { return _player; }
-            set { _player = value; }
+            get { return _currentPlayer; }
+            set { _currentPlayer = value; }
         }
 
         public Map Map
@@ -40,7 +40,11 @@ namespace Demo_Wpf_AdventureGame.Models
 
         #region CONSTRUCTORS
 
-
+        public GameSession()
+        {
+            _currentPlayer = new Player();
+            _map = new Map();
+        }
 
         #endregion
 
