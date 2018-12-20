@@ -5,6 +5,90 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo_Wpf_AdventureGame"
         mc:Ignorable="d"
-        Title="GameWindow" Height="600" Width="800" Loaded="Window_Loaded">
-    <StackPanel/>
+        Title="GameWindow"
+        Height="600"
+        Width="900" 
+        Background="MidnightBlue"
+        WindowStyle="None"
+        Loaded="Window_Loaded">
+
+    <Grid
+        Margin="10, 10, 10, 10"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid
+            Grid.Row="0"
+            Margin="2, 2, 2, 2"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <Border
+                BorderThickness="1" 
+                BorderBrush="PowderBlue"
+                CornerRadius="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"/>
+            <StackPanel 
+                Orientation="Horizontal"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center">
+                <Label
+                    Margin="10, 0, 0, 0"
+                    Padding="0"
+                    Content="Mission: The Aion Project"
+                    Foreground="SkyBlue"
+                    FontFamily="OCR A Extended"
+                    FontSize="20"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"/>
+                <Button
+                    Margin="100, 0, 0, 0"
+                    Padding="5"
+                    Content="Exit Mission"
+                    Background="PowderBlue" Click="ButtonExitMission_Click" />
+            </StackPanel>
+        </Grid>
+        <Grid
+            Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid
+                Grid.Column="0"
+                Margin="2, 2, 2, 2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+                <Border
+                    BorderThickness="1" 
+                    BorderBrush="PowderBlue"
+                    CornerRadius="10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"/>
+                <TextBlock
+                    Margin="10, 10, 10, 10"
+                    Text="">
+
+
+                </TextBlock>
+            </Grid>
+            <Grid
+                Grid.Column="1"
+                Margin="2, 2, 2, 2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch">
+                <Border
+                    BorderThickness="1" 
+                    BorderBrush="PowderBlue"
+                    CornerRadius="10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"/>
+
+
+            </Grid>
+        </Grid>
+    </Grid>
 </Window>

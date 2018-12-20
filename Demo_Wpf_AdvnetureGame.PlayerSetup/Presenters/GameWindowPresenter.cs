@@ -48,6 +48,9 @@ namespace Demo_Wpf_AdventureGame.Presenters
             InitializeGameWindow();
         }
 
+        /// <summary>
+        /// add all initial game data to the GameSession object
+        /// </summary>
         private void InitializeGameData()
         {
             _gameSession = new GameSession();
@@ -58,6 +61,9 @@ namespace Demo_Wpf_AdventureGame.Presenters
 
         #region METHODS
 
+        /// <summary>
+        /// display opening splash screen w/ Quit option
+        /// </summary>
         private void ShowOpeningWindow()
         {
             SplashScreen splashScreen = new SplashScreen();
@@ -65,20 +71,32 @@ namespace Demo_Wpf_AdventureGame.Presenters
             splashScreen.ShowDialog();
         }
 
+        /// <summary>
+        /// display the initial player setup window and initialize player properties
+        /// </summary>
         private void ShowPlayerSetupWindow()
         {
-            PlayerSetupWindow playerSetupWindow = new PlayerSetupWindow();
-            playerSetupWindow.Owner = _gameWindow;
-            playerSetupWindow.DataContext = _gameSession;
-            playerSetupWindow.ShowDialog();
+            //
+            // commented out player setup window while debugging
+            //
+            //PlayerSetupWindow playerSetupWindow = new PlayerSetupWindow();
+            //playerSetupWindow.Owner = _gameWindow;
+            //playerSetupWindow.DataContext = _gameSession;
+            //playerSetupWindow.ShowDialog();
+
+            //
+            // initialize player properties while debugging
+            //
+            _gameSession.CurrentPlayer.ShortName = "Bonzo";
+            _gameSession.CurrentPlayer.Age = 44;
+            _gameSession.CurrentPlayer.IsGalacticCitizen = true;
+
+            _gameSession.CurrentPlayer.IsActive = true;
         }
 
         private void InitializeGameWindow()
         {
             _gameSession = new GameSession();
-
-            _gameSession.CurrentPlayer.ShortName = "Bonzo";
-
             _gameWindow = new GameWindow();
             _gameWindow.DataContext = _gameSession;
             _gameWindow.Show();

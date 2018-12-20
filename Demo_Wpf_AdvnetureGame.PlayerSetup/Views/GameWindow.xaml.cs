@@ -30,6 +30,9 @@ namespace Demo_Wpf_AdventureGame.Views
 
         }
 
-
+        private void ButtonExitMission_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

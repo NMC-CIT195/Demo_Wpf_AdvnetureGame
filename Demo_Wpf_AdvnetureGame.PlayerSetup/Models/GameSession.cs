@@ -19,7 +19,6 @@ namespace Demo_Wpf_AdventureGame.Models
         private Player _currentPlayer;
         private Map _map;
 
-
         #endregion
 
         #region PROPERTIES
@@ -50,7 +49,16 @@ namespace Demo_Wpf_AdventureGame.Models
 
         #region METHODS
 
+        public string PlayerInformation()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Clear();
+            sb.AppendLine($"Traveler: {_currentPlayer.ShortName}");
+            sb.AppendLine($"Age: {_currentPlayer.Age}");
 
+
+            return sb.ToString();
+        }
 
         #endregion
 
