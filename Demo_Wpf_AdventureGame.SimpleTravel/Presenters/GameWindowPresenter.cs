@@ -101,7 +101,7 @@ namespace Demo_Wpf_AdventureGame.Presenters
             _gameWindow.Show();
             _gameWindow.Hide(); // hide game window to show opening window
 
-            ShowOpeningWindow();
+            //ShowOpeningWindow();
 
            _gameWindow.Show(); // show game window if player does not quit on opening screen
             //InitializePlayerSetupWindow(); 

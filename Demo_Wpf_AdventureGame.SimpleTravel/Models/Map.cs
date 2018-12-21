@@ -42,6 +42,14 @@ namespace Demo_Wpf_AdventureGame.Models
             set { _locations = value; }
         }
 
+        public List<Location> AccessibleLocations
+        {
+            get
+            {
+                return CalculateAccessibleLocations();
+            }
+        }
+
         #endregion
 
         #region CONSTRUCTORS
@@ -75,6 +83,10 @@ namespace Demo_Wpf_AdventureGame.Models
         #region METHODS
 
 
+        public List<Location> CalculateAccessibleLocations()
+        {
+            return _locations.Where(l => l.IsAccessible == true).ToList();
+        }
 
         #endregion
 

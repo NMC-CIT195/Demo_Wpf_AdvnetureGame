@@ -15,9 +15,10 @@
         Loaded="PlayerSetup_Loaded">
 
     <Window.Resources>
-        <ObjectDataProvider MethodName="GetValues"
-        ObjectType="{x:Type sys:Enum}"
-        x:Key="raceNames">
+        <ObjectDataProvider
+            MethodName="GetValues"
+            ObjectType="{x:Type sys:Enum}"
+            x:Key="raceNames">
             <ObjectDataProvider.MethodParameters>
                 <x:Type TypeName="local:RaceName" />
             </ObjectDataProvider.MethodParameters>

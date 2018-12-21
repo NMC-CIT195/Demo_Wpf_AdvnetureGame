@@ -96,7 +96,7 @@
                     <Label
                         Margin="10, 0, 0, 0"
                         Content="{Binding CurrentPlayer.ExperiencePoints}" 
-                        ContentStringFormat="Experience Points: {0}"/>                   
+                        ContentStringFormat="Experience Points: {0}"/>
                 </StackPanel>
             </Grid>
             <Grid
@@ -135,7 +135,7 @@
                             VerticalAlignment="Top"                            
                             Margin="10, 10, 10, 10"
                             Width="200" 
-                            ItemsSource="{Binding Map.Locations}"
+                            ItemsSource="{Binding Map.AccessibleLocations}"
                             SelectedItem="{Binding CurrentLocation}"
                             DisplayMemberPath="Name"  />
 
