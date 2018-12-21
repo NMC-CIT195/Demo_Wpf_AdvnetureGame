@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Demo_Wpf_AdventureGame.Models
 {
-    public class Player : Character
+    public class Player : Character, INotifyPropertyChanged
     {
         #region FIELDS
 
         private int _age;
         private bool _isGalacticCitizen;
+        private int _experiencePoints;
 
         #endregion
 
@@ -20,13 +22,31 @@ namespace Demo_Wpf_AdventureGame.Models
         public int Age
         {
             get { return _age; }
-            set { _age = value; }
+            set
+            {
+               _age = value;
+                OnPropertyChanged("Age"); 
+            }
         }
 
         public bool IsGalacticCitizen
         {
             get { return _isGalacticCitizen; }
-            set { _isGalacticCitizen = value; }
+            set
+            {
+                _isGalacticCitizen = value;
+                OnPropertyChanged("IsGalacticCitizen");
+            }
+        }
+        
+        public int ExperiencePoints
+        {
+            get { return _experiencePoints; }
+            set
+            {
+                _experiencePoints = value;
+                OnPropertyChanged("ExperiencePoints");
+            }
         }
 
         #endregion
@@ -61,7 +81,6 @@ namespace Demo_Wpf_AdventureGame.Models
         #endregion
 
         #region EVENTS
-
 
 
         #endregion

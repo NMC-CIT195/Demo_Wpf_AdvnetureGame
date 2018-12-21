@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Demo_Wpf_AdventureGame.Models;
 using Demo_Wpf_AdventureGame.Views;
 using Demo_Wpf_AdventureGame.DataAccessLayer;
+using System.Windows;
 
 namespace Demo_Wpf_AdventureGame.Presenters
 {
@@ -48,61 +49,60 @@ namespace Demo_Wpf_AdventureGame.Presenters
             InitializeGameWindow();
         }
 
-        /// <summary>
-        /// add all initial game data to the GameSession object
-        /// </summary>
-        private void InitializeGameData()
-        {
-            _gameSession = new GameSession();
-            _gameSession.CurrentPlayer = GetGameObjects.PlayerInformation();
-        }
 
         #endregion
 
         #region METHODS
 
         /// <summary>
+        /// add all initial game data to the GameSession object
+        /// </summary>
+        private void InitializeGameData()
+        {
+            _gameSession = new GameSession();
+
+            //
+            // method to populate the Player object properties without setup window
+            //
+            //_gameSession.CurrentPlayer = GetGameObjects.PlayerInformation();
+        }
+
+        /// <summary>
         /// display opening splash screen w/ Quit option
         /// </summary>
         private void ShowOpeningWindow()
         {
-            SplashScreen splashScreen = new SplashScreen();
-            splashScreen.Owner = _gameWindow;
-            splashScreen.ShowDialog();
+            OpeningScreen OpeningScreen = new OpeningScreen();
+            OpeningScreen.ShowDialog();
         }
 
         /// <summary>
         /// display the initial player setup window and initialize player properties
         /// </summary>
-        private void ShowPlayerSetupWindow()
+        private void InitializePlayerSetupWindow()
         {
-            //
-            // commented out player setup window while debugging
-            //
-            //PlayerSetupWindow playerSetupWindow = new PlayerSetupWindow();
-            //playerSetupWindow.Owner = _gameWindow;
-            //playerSetupWindow.DataContext = _gameSession;
-            //playerSetupWindow.ShowDialog();
-
-            //
-            // initialize player properties while debugging
-            //
-            _gameSession.CurrentPlayer.ShortName = "Bonzo";
-            _gameSession.CurrentPlayer.Age = 44;
-            _gameSession.CurrentPlayer.IsGalacticCitizen = true;
+            PlayerSetupWindow playerSetupWindow = new PlayerSetupWindow();
+            playerSetupWindow.Owner = _gameWindow;
+            playerSetupWindow.DataContext = _gameSession;
+            playerSetupWindow.Show();
 
             _gameSession.CurrentPlayer.IsActive = true;
         }
 
+        /// <summary>
+        /// display the opening window, player setup window, and then the game window
+        /// </summary>
         private void InitializeGameWindow()
         {
-            _gameSession = new GameSession();
             _gameWindow = new GameWindow();
             _gameWindow.DataContext = _gameSession;
             _gameWindow.Show();
+            _gameWindow.Hide(); // hide game window to show opening window
 
-            //ShowOpeningWindow();
-            ShowPlayerSetupWindow();
+            ShowOpeningWindow();
+
+           _gameWindow.Show(); // show game window if player does not quit on opening screen
+            InitializePlayerSetupWindow(); 
         }
 
         #endregion

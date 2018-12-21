@@ -18,22 +18,17 @@ namespace Demo_Wpf_AdventureGame.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class SplashScreen : Window
+    public partial class OpeningScreen : Window
     {
-        public SplashScreen()
+        public OpeningScreen()
         {
             InitializeComponent();
-            InitializeWindow();
-        }
-
-        private void InitializeWindow()
-        {
-
         }
 
         private void ButtonQuit_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            this.Close();
+            Environment.Exit(0);
         }
 
         private void ButtonPlay_Click(object sender, RoutedEventArgs e)

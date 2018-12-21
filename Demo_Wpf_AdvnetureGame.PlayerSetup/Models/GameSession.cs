@@ -49,16 +49,6 @@ namespace Demo_Wpf_AdventureGame.Models
 
         #region METHODS
 
-        public string PlayerInformation()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Clear();
-            sb.AppendLine($"Traveler: {_currentPlayer.ShortName}");
-            sb.AppendLine($"Age: {_currentPlayer.Age}");
-
-
-            return sb.ToString();
-        }
 
         #endregion
 

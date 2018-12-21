@@ -67,7 +67,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SplashScreen.xaml">
+    <Page Include="Views\OpeningScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -80,6 +80,7 @@
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\RaceName.cs" />
     <Compile Include="Presenters\GameWindowPresenter.cs" />
+    <Compile Include="Views\Converters\BooleanToTextValueConverter.cs" />
     <Compile Include="Views\GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
@@ -90,8 +91,8 @@
     <Compile Include="Views\PlayerSetupWindow.xaml.cs">
       <DependentUpon>PlayerSetupWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SplashScreen.xaml.cs">
-      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    <Compile Include="Views\OpeningScreen.xaml.cs">
+      <DependentUpon>OpeningScreen.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -123,7 +124,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Assets\Images\splashscreen_space.jpg" />
+    <Resource Include="Assets\Images\openingscreen_space.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,10 +15,12 @@ namespace Demo_Wpf_AdventureGame.DataAccessLayer
             {
                 Id = 1,
                 ShortName = "Bonzo",
-                Race =RaceName.Human,
+                Race = RaceName.Human,
                 Age = 45,
+                IsGalacticCitizen = true,
                 IsActive = true,
-                CurrentLocation = new MapCoordinates(0, 0)
+                CurrentLocation = new MapCoordinates(0, 0),
+                ExperiencePoints = 10
             };
         }
     }

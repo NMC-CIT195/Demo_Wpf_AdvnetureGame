@@ -24,14 +24,15 @@ namespace Demo_Wpf_AdventureGame.Views
             InitializeComponent();
         }
 
-        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        private void PlayerSetup_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            TextBoxName.Focus();
+            TextBoxAge.Text = "";
         }
     }
 }

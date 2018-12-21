@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:Demo_Wpf_AdventureGame.Models"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="PlayerSetupWindow"
+        Name="PlayerSetup"
         Height="450" 
         Width="800" 
         ResizeMode="NoResize" 
         WindowStyle="None"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterOwner"
+        Loaded="PlayerSetup_Loaded">
 
     <Window.Resources>
         <ObjectDataProvider MethodName="GetValues"
@@ -78,7 +79,7 @@
                         HorizontalAlignment="Left"
                         Margin="10,0,0,0 "
                         Width="200"
-                        Text="{Binding CurrentPlayer.ShortName}"
+                        Text="{Binding CurrentPlayer.ShortName, Mode=TwoWay}"
                         />
                     <Label
                         Grid.Row="1"
@@ -98,7 +99,7 @@
                         HorizontalAlignment="Left"
                         Margin="10,0,0,0 "
                         Width="200"
-                        Text="{Binding CurrentPlayer.Age}"
+                        Text="{Binding CurrentPlayer.Age, Mode=TwoWay}"
                         />
                     <Label
                         Grid.Row="2"
@@ -119,7 +120,7 @@
                         Margin="10,0,0,0 "
                         Width="200"
                         ItemsSource="{Binding Source={StaticResource raceNames}}"
-                        SelectedItem="{Binding Path=CurrentPlayer.Race}"
+                        SelectedItem="{Binding Path=CurrentPlayer.Race, Mode=TwoWay}"
                         />
                     <Label
                         Grid.Row="3"
@@ -144,16 +145,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button
-                        Name="ButtonCancel"
-                        Grid.Column="0"
-                        Margin="10,10,10,10"
-                        Content="Cancel"
-                        FontFamily="OCR A Extended"
-                        Background="PowderBlue"
-                        Foreground="MidnightBlue"
-                        Click="ButtonCancel_Click" />
                     <Button
                         Name="ButtonSave"
                         Grid.Column="1"
