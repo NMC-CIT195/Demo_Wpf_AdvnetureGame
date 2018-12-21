@@ -9,7 +9,7 @@ namespace Demo_Wpf_AdventureGame.DataAccessLayer
 {
     public static class GetGameObjects
     {
-        public static Player PlayerInformation()
+        public static Player PlayerData()
         {
             return new Player()
             {

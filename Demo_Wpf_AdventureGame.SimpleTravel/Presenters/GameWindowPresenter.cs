@@ -65,6 +65,8 @@ namespace Demo_Wpf_AdventureGame.Presenters
             // method to populate the Player object properties without setup window
             //
             _gameSession.CurrentPlayer = GetGameObjects.PlayerData();
+            _gameSession.Map = GetGameObjects.MapData();
+            _gameSession.CurrentLocation = _gameSession.Map.Locations.FirstOrDefault(l => l.Id == 1001);
         }
 
         /// <summary>
@@ -102,7 +104,7 @@ namespace Demo_Wpf_AdventureGame.Presenters
             ShowOpeningWindow();
 
            _gameWindow.Show(); // show game window if player does not quit on opening screen
-            InitializePlayerSetupWindow(); 
+            //InitializePlayerSetupWindow(); 
         }
 
         #endregion
